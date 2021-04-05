@@ -9,6 +9,6 @@ inputEl.addEventListener('input', changeFontSize);
 spanEl.addEventListener('input', changeFontSize);
  
 
-function changeFontSize(event) {
+function changeFontSize() {
     spanEl.style.fontSize = inputEl.value + "px";
 }

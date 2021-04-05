@@ -21,6 +21,7 @@ const refs = {
     renderBtn: document.querySelector('button[data-action="render'),
     destroyBtn: document.querySelector('button[data-action="destroy'),
     boxesEl: document.querySelector('#boxes'),
+    size:30,
 }
 
 refs.renderBtn.addEventListener('click', getAmount)
@@ -37,12 +38,12 @@ function cleanInput() {
 
 
 function createBoxes(amount) {
-    let size = 30;  
+      
     for (let i = 0; i < amount; i++) {
-        size += i * 10;
+        refs.size +=  10;
         const box = document.createElement("div");
-        box.style.width = `${size}px`;
-        box.style.height = `${size}px`;
+        box.style.width = `${refs.size }px`;
+        box.style.height = `${refs.size }px`;
         box.style.backgroundColor=`rgb(${ getRandom(0, 255) }, ${ getRandom(0, 255) }, ${ getRandom(0, 255) })`;
         function getRandom(min, max) {
             return Math.ceil(Math.random() * (max - min) + min); 
@@ -54,5 +55,7 @@ function createBoxes(amount) {
 refs.destroyBtn.addEventListener('click', destroyBoxes);
 function destroyBoxes() {
     refs.boxesEl.innerHTML = "";
+    refs.inputEl.value = 0;
+    refs.size = 30;
 }
 
