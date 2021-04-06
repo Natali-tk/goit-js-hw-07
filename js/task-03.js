@@ -22,6 +22,7 @@ const images = [
 const galleryEl = document.querySelector('#gallery');
 galleryEl.classList.add('image-list');
 
-images.forEach(image => {
-    galleryEl.insertAdjacentHTML('afterbegin', `<li><img src="${image.url}" alt="${image.alt}"></li>`)
+const creatImages = images.map(image => {
+    galleryEl.insertAdjacentHTML('afterbegin', `<li><img src="${image.url}" alt="${image.alt}"></li>`);   
 });
+
