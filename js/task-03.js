@@ -23,6 +23,9 @@ const galleryEl = document.querySelector('#gallery');
 galleryEl.classList.add('image-list');
 
 const creatImages = images.map(image => {
-    galleryEl.insertAdjacentHTML('afterbegin', `<li><img src="${image.url}" alt="${image.alt}"></li>`);   
-});
+    return `<li><img src="${image.url}" alt="${image.alt}"></li>`;   
+}).join('');
+galleryEl.insertAdjacentHTML('afterbegin', creatImages);
+console.log(creatImages);
+
 

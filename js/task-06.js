@@ -12,7 +12,11 @@ inputEl.addEventListener('blur', () => {
     } else {
         changeClassList('invalid', 'valid' );
     }
+    if (!inputEl.value) {
+        inputEl.classList.remove('invalid');
+    }
 });
+
 
 const changeClassList =  (add, rem)=>{
     inputEl.classList.add(add);
